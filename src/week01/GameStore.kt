@@ -15,6 +15,8 @@ fun main() {
         title = gameTitle,
         finalPrice = finalPrice
     )
+    var userNote: String? = null
+    println(userNote ?: "Tidak ada catatan.")
 }
 
 fun calculateDiscount(price: Int) =
