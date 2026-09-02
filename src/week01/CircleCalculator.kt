@@ -1,17 +1,14 @@
 package oop_001_johnthor.week01
 
 fun main(args: Array<String>) {
-    // Variable definition
-    var radius: Double = 7.0
-    var pi: Double = 3.14
 
-    // Calculation
-    var area: Double = pi * radius * radius
+    val radius = 7.0
+    val pi  = 3.14
 
-    // Output Concatenation
-    println("Radius: " + radius + ", Area: " + area)
+    val area = pi * radius * radius
 
-    // Logic check
+    println("Radius: $radius, Area:  $area")
+
     checkSize(area)
 }
 
