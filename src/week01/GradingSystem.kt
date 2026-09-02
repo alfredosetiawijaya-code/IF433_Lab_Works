@@ -2,10 +2,10 @@ package week01
 
 
 fun main() {
-    val name: String = "John Thor"
-    val score: Int = 80
+    val name = "John Thor"
+    val score = 80
 
-    println("Nama:" + name + " Nilai " + score)
+    println("Nama: $name , Nilai:  $score")
 
     val grade = when (score) {
         in 90..100 -> "A"
@@ -13,4 +13,6 @@ fun main() {
         in 70..79 -> "C"
         else -> "D"
     }
+    println("Status: ${calculateStatus(score)}")
 }
+fun calculateStatus(score: Int) = if (score > 75) "Lulus" else "Tidak Lulus"
