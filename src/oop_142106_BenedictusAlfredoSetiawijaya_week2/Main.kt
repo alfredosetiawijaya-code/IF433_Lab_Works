@@ -5,39 +5,72 @@ import java.util.Scanner
 fun main() {
     val scanner = Scanner(System.`in`)
 
-    println("--- APLIKASI PMB UMN ---")
-
-    print("Masukkan Nama: ")
+    print("Masukkan nama Hero: ")
     val name = scanner.nextLine()
 
-    print("Masukkan NIM (Wajib 5 Karakter): ")
-    val nim = scanner.next()
+    print("Masukkan Base Damage: ")
+    val damage = scanner.nextInt()
 
-    scanner.nextLine()
+    val hero = Hero(name, damage)
 
-    if (nim.length != 5) {
-        println("ERROR: Pendaftaran dibatalkan. NIM harus 5 karakter!")
-    } else {
-        print("Masukkan Jurusan: ")
-        val major = scanner.nextLine()
+    var enemyHp = 100
 
-        val s1 = Student(name, nim, major)
+    println()
+    println("--- MINI RPG BATTLE ---")
+    println("${hero.name} memasuki arena!")
 
-        println("Status: Pendaftaran Selesai.")
+    while (hero.isAlive() && enemyHp > 0) {
+
+        println()
+        println("HP Hero  : ${hero.hp}")
+        println("HP Enemy : $enemyHp")
+        println("1. Serang")
+        println("2. Kabur")
+        print("Pilih: ")
+
+        val pilihan = scanner.nextInt()
+
+        if (pilihan == 1) {
+
+            hero.attack("Enemy")
+
+            enemyHp -= hero.baseDamage
+
+            if (enemyHp < 0) {
+                enemyHp = 0
+            }
+
+            println("HP Enemy sekarang: $enemyHp")
+
+            if (enemyHp > 0) {
+                val enemyDamage = (10..20).random()
+
+                println("Enemy membalas!")
+                hero.takeDamage(enemyDamage)
+
+                println("Enemy memberikan damage: $enemyDamage")
+                println("HP Hero sekarang: ${hero.hp}")
+            }
+
+        } else if (pilihan == 2) {
+
+            println("${hero.name} memilih untuk kabur!")
+            break
+
+        } else {
+
+            println("Pilihan tidak valid.")
+        }
     }
-    print("Pilih jalur (1. Reguler, 2. Umum):")
-    val type = scanner.nextInt()
-    scanner.nextLine()
 
-    if (type == 1) {
-        println("Masukan Jurusan: ")
-        val major = scanner.nextLine()
-        val s1 = Student(name, nim, major)
-        println("Terdaftar di: ${s1.major}dengan gpa awal ${s1.gpa}")
-    } else if (type == 2) {
-        val s2 = Student(name, nim)
-        println("Terdaftar di: ${s2.major}dengan gpa awal ${s2.gpa}")
+    println()
+    println("--- HASIL PERTARUNGAN ---")
+
+    if (enemyHp <= 0) {
+        println("${hero.name} menang!")
+    } else if (!hero.isAlive()) {
+        println("Enemy menang!")
     } else {
-        println("Pilihan ngawur,pendaftaran batal!")
+        println("${hero.name} kabur dari pertarungan.")
     }
 }
