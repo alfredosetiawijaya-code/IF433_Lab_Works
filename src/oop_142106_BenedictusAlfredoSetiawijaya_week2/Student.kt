@@ -13,4 +13,8 @@ class Student(
             println("LOG : objek student $name berhasil di alokasikan di memory")
         }
     }
+    constructor(
+        name: String,
+        nim: String
+    ) : this(name, nim, "Non-Matriculated")
 }
