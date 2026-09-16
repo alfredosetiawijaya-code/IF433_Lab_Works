@@ -1,15 +1,15 @@
 package week03
 
-import week3.Employee
-
 fun main() {
 
-    val e = Employee("Budi")
+    val weapon = Weapon("Excalibur")
 
-    e.salary = 5000000
-    println("Gaji: ${e.salary}")
+    weapon.damage = -50
+    println("Damage: ${weapon.damage}")
 
-    e.increasePerformance()
+    weapon.damage = 9999
+    println("Damage: ${weapon.damage}")
 
-    println("Pajak yang harus dibayar: ${e.tax}")
+    println("Weapon: ${weapon.name}")
+    println("Tier: ${weapon.tier}")
 }
