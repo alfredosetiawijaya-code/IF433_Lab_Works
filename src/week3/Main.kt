@@ -2,14 +2,13 @@ package week03
 
 fun main() {
 
-    val weapon = Weapon("Excalibur")
+    val player = Player("Budi")
 
-    weapon.damage = -50
-    println("Damage: ${weapon.damage}")
+    player.addXp(50)
+    println("Level sekarang: ${player.level}")
 
-    weapon.damage = 9999
-    println("Damage: ${weapon.damage}")
+    player.addXp(60)
+    println("Level sekarang: ${player.level}")
 
-    println("Weapon: ${weapon.name}")
-    println("Tier: ${weapon.tier}")
+    // player.xp = 500
 }
