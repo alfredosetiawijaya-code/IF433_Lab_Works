@@ -1,4 +1,4 @@
-package week04
+package week4
 
 import week4.Vehicle
 
@@ -9,5 +9,10 @@ open class Car(
 
     override fun honk() {
         println("$brand berbunyi: Beep Beep!")
+    }
+
+    override fun accelerate() {
+        super.accelerate()
+        println("$brand mempercepat laju kendaraan.")
     }
 }
