@@ -2,13 +2,24 @@ package week05
 
 fun main() {
 
-    val mathHelper = MathHelper()
+    val eWallet = EWallet(
+        accountName = "Budi",
+        balance = 50000.0
+    )
 
-    val luasPersegi = mathHelper.hitungLuas(5)
-    val luasPersegiPanjang = mathHelper.hitungLuas(10, 5)
-    val luasLingkaran = mathHelper.hitungLuas(7.0)
+    val creditCard = CreditCard(
+        accountName = "Andi",
+        limit = 100000.0
+    )
 
-    println("Luas Persegi = $luasPersegi")
-    println("Luas Persegi Panjang = $luasPersegiPanjang")
-    println("Luas Lingkaran = $luasLingkaran")
+    val paymentMethods: List<PaymentMethod> = listOf(
+        eWallet,
+        creditCard
+    )
+
+    for (payment in paymentMethods) {
+        println("Akun: ${payment.accountName}")
+        payment.processPayment(75000.0)
+        println()
+    }
 }
