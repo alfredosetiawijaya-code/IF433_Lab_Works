@@ -18,8 +18,16 @@ fun main() {
     )
 
     for (payment in paymentMethods) {
+
         println("Akun: ${payment.accountName}")
+
         payment.processPayment(75000.0)
+
+        if (payment is EWallet) {
+            payment.topUp(50000.0)
+            payment.processPayment(75000.0)
+        }
+
         println()
     }
 }
