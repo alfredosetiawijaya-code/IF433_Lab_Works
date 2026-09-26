@@ -1,4 +1,4 @@
-package oop_<nim>_<nama>.week05
+package week05
 
 class Admin(nama: String) : Pegawai(nama) {
 
