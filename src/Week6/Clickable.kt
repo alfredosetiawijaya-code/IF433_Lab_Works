@@ -1,6 +1,6 @@
 interface Clickable {
 
-    val name: String = "Tombol Rahasia"
+    val name: String
 
     fun click()
 }
