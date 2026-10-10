@@ -25,4 +25,13 @@ fun main() {
 
     println(user3)
     println(user3 == user4)
+
+    val user5 = user3.copy(age = 21)
+
+    println("User asli: $user3")
+    println("User hasil copy: $user5")
+
+    val (name, age) = user5
+    println("Nama: $name")
+    println("Umur: $age")
 }
