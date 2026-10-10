@@ -95,6 +95,15 @@ fun main() {
     println("Damage: ${epicSword.item.damage}")
     println("Rarity: ${epicSword.item.rarity}")
     println("Durability: ${epicSword.durability}")
+
+    println("Legendary Drop Chance: ${ItemRarity.LEGENDARY.dropChance}")
+
+    val starterSword = Weapon.forgeStarterSword()
+    val epicSword = Weapon.forgeEpicSword()
+
+    println(starterSword)
+    println(epicSword)
 }
+
 
 
