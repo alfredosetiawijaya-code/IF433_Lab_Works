@@ -103,6 +103,26 @@ fun main() {
 
     println(starterSword)
     println(epicSword)
+    val strongerSword = starterSword.item.copy(damage = 25)
+
+    println("Original Item: ${starterSword.item}")
+    println("Copied Item: $strongerSword")
+
+    val events = listOf(
+        BattleState.SafeZone,
+        BattleState.MonsterEncounter,
+        BattleState.LootDropped,
+        BattleState.GameOver
+    )
+
+    for (event in events) {
+        when (event) {
+            BattleState.SafeZone -> println("Player is in a safe zone.")
+            BattleState.MonsterEncounter -> println("A monster appears!")
+            BattleState.LootDropped -> println("Loot has been dropped!")
+            BattleState.GameOver -> println("Game Over!")
+        }
+    }
 }
 
 
