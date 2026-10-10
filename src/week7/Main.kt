@@ -36,10 +36,11 @@ fun main() {
     println("Nama: $name")
     println("Umur: $age")
 
-    val response: ApiResponse = ApiResponse.Loading
-
+    val response = null
     val uiMessage = when (response) {
         is ApiResponse.Success -> "Data: ${response.data}"
         is ApiResponse.Error -> "Error: ${response.message}"
+        ApiResponse.Loading -> "Tampilkan Spinner"
     }
+    println(uiMessage)
 }
