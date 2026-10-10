@@ -1,5 +1,6 @@
 package week7
 
+import week07.ApiResponse
 import week07.DatabaseManager
 import week07.NetworkClient
 import week07.RegularUser
@@ -34,4 +35,11 @@ fun main() {
     val (name, age) = user5
     println("Nama: $name")
     println("Umur: $age")
+
+    val response: ApiResponse = ApiResponse.Loading
+
+    val uiMessage = when (response) {
+        is ApiResponse.Success -> "Data: ${response.data}"
+        is ApiResponse.Error -> "Error: ${response.message}"
+    }
 }
