@@ -11,3 +11,4 @@ sealed class ApiResponse {
     data class Error(val message: String) : ApiResponse()
     object Loading : ApiResponse()
 }
+
