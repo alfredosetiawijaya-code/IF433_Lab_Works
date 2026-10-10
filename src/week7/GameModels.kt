@@ -13,3 +13,4 @@ data class GameItem(
     val damage: Int,
     val rarity: ItemRarity
 )
+
