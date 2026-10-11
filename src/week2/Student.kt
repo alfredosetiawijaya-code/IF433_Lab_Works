@@ -1,4 +1,4 @@
-package oop_142106_BenedictusAlfredoSetiawijaya_week2
+package week2
 
 class Student(
     val name: String,

@@ -1,4 +1,4 @@
-package oop_142106_BenedictusAlfredoSetiawijaya_week2
+package week2
 
 import java.util.Scanner
 
