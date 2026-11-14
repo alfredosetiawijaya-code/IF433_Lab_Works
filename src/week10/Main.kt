@@ -15,4 +15,13 @@ fun main() {
 
     println("Aset: ${priceBox.key}, Harga: ${priceBox.value} USD")
 
+
+    println("\n=== TEST GENERIC FUNCTIONS ===")
+
+    printData(3.14)
+
+    val result = processData("Stable Coin")
+    println("Hasil proses: $result")
+
+
 }
