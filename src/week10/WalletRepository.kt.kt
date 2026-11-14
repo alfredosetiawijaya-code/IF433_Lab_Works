@@ -1,6 +1,6 @@
 package week10
 
-class WalletRepository<T> {
+class `WalletRepository.kt`<T> {
 
     private val items = mutableListOf<T>()
 
