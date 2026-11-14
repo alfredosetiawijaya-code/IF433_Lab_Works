@@ -23,5 +23,4 @@ fun main() {
     val result = processData("Stable Coin")
     println("Hasil proses: $result")
 
-
 }
