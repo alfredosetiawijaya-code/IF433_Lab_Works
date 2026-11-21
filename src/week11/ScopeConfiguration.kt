@@ -15,7 +15,6 @@ fun main() {
     }
 
     println(user)
-
     println("\n=== TEST ALSO ===")
 
     val numbers = mutableListOf(1, 2, 3)
@@ -24,19 +23,7 @@ fun main() {
         println("Log Sebelum ditambah: $it")
     }.add(4)
 
+
     println("Setelah ditambah: $numbers")
 
-    println("\n=== TEST WITH ===")
-
-    with(user) {
-        println("User Detail -> Nama: $name, Umur: $age")
-    }
-
-    println("\n=== TEST APPLY AND ALSO ===")
-
-    val newUser = User("Budi", 20).apply {
-        age = 21
-    }.also {
-        println("User baru berhasil dibuat: $it")
-    }
 }
