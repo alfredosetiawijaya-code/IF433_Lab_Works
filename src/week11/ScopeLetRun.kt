@@ -1,5 +1,6 @@
 package week11
 
+data class User(val name: String== "", val age: Int=0)
 fun main() {
     println("=== TEST LET FUNCTION ===")
 
